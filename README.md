@@ -1,4 +1,4 @@
-# Sentiment-Analysis
+# Sentiment-Analysis - Improved
 
 ---------------------------------------------------------------------
 
@@ -22,8 +22,6 @@ There are 4 different models in the repository.
 Each of these model has a slight variant inside them, so you can say these are total 8 models (variants) of KNN.
 
 ---------------------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------------------
 
 # one_feat
 
@@ -65,11 +63,8 @@ Run the following:
 
 2. Select a Model and go into the directory
 
-
 3. run - xfmodel_diff.py and xfmodel_same.py
 
-
 4. In the same folder after completion run accuracy.py (comment out the required file)
-
 
 Done! You can see the final results now.
