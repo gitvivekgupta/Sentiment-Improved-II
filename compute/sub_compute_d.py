@@ -35,7 +35,7 @@ def get_neg_score(neg_score, neg_sub_score, theory):
 
 def get_neu_score(neu_score, neu_sub_score, theory):
     
-    neu_score += 30
+    neu_score += 20
     get_neu_sub_score(neu_sub_score, theory)
 
     return neu_score

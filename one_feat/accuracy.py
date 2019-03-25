@@ -1,15 +1,18 @@
-import csv
-import json
 import pandas as pd
-from matplotlib import cm
 import matplotlib.pyplot as plt
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+from sklearn.neighbors import KNeighborsClassifier
 
-# icon = pd.read_csv('var_compute.csv.csv')
-# icon = pd.read_csv('level_compute.csv.csv')
+icon = pd.read_csv('diff_score.csv')
+# icon = pd.read_csv('same_score.csv')
+
+# norm = pd.read_csv('norm_diff_Score.csv')
+# norm = pd.read_csv('norm_same_Score.csv')
 
 X = icon[['score']]
+# X = norm[['score']]
+
 y = icon['value']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
@@ -17,24 +20,39 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 myList = list(range(1,800))
 neighbors = myList
 
-scores = []
-k_value = []
+n = []
+k_val = []
+cv_scores = []
 
 for k in neighbors:
-    k_value.append(k)
     knn = KNeighborsClassifier(n_neighbors=k)
     knn.fit(X_train, y_train)
     score = knn.score(X_test, y_test)
-    scores.append(score)
+    k_val.append(k)
+    n.append(score)
 
-plt.plot(scores)
-
+plt.plot(n)
+plt.xlabel('Value of k')
 plt.ylabel('Accuracy Score')
-
 plt.show()
 
-scores.sort()
-print(scores[-1])
+n, k_val = zip(*sorted(zip(n, k_val)))
 
-k_value.sort()
-print(scores[-1])
+print(n[-1], "||", k_val[-1])
+
+
+for kk in neighbors:
+    knn = KNeighborsClassifier(n_neighbors=kk)
+    scores = cross_val_score(knn, X_train, y_train, cv=10, scoring='accuracy')
+    cv_scores.append(scores.mean())
+
+
+MSE = [1 - x for x in cv_scores]
+
+optimal_k = neighbors[MSE.index(min(MSE))]
+print("The optimal number of neighbors is %d" % optimal_k)
+
+plt.plot(neighbors, MSE)
+plt.xlabel('Number of Neighbors K')
+plt.ylabel('Misclassification Error')
+plt.show()
