@@ -18,26 +18,26 @@ There are 4 different models in the repository.
 
 Each of these model has a slight variant inside them, so you can say these are total 8 models (variants) of KNN.
 
---- one_feat
+# one_feat
 
     -- 1fmodel_diff.py
     
     
     -- 1fmodel_same.py
 
---- three_feat
+# three_feat
 
     -- 3fmodel_diff.py
     
     -- 3fmodel_same.py
 
---- four_feat
+# four_feat
 
     -- 4fmodel_diff.py
     
     -- 4fmodel_same.py
 
---- seven_feat
+# seven_feat
 
     -- 7fmodel_diff.py
     
