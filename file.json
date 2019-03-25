@@ -1,0 +1,14 @@
+[
+    {
+        "vocab": "./feature_files/neg_word_vocab.txt",
+        "features": "./feature_files/neg_features.txt"
+    },
+    {
+        "vocab": "./feature_files/neu_word_vocab.txt",
+        "features": "./feature_files/neu_features.txt"
+    },
+    {
+        "vocab": "./feature_files/pos_word_vocab.txt",
+        "features": "./feature_files/pos_features.txt"
+    }
+]
