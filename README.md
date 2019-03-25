@@ -1,9 +1,10 @@
 # Sentiment-Analysis
 
-Run the following
+---------------------------------------------------------------------
 
-1. features.py
+This repos is improvised from previous models.
 
+--------------------------------------------------------------------------------------------
 
 There are 4 different models in the repository.
 
@@ -16,7 +17,13 @@ There are 4 different models in the repository.
 -- seven_feat (with 7 feature space)
 
 
+--------------------------------------------------------------------------------------------
+
 Each of these model has a slight variant inside them, so you can say these are total 8 models (variants) of KNN.
+
+---------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------
 
 # one_feat
 
@@ -25,11 +32,15 @@ Each of these model has a slight variant inside them, so you can say these are t
     
     -- 1fmodel_same.py
 
+--------------------------------------------------------------------------------------------
+
 # three_feat
 
     -- 3fmodel_diff.py
     
     -- 3fmodel_same.py
+
+--------------------------------------------------------------------------------------------
 
 # four_feat
 
@@ -37,12 +48,20 @@ Each of these model has a slight variant inside them, so you can say these are t
     
     -- 4fmodel_same.py
 
+--------------------------------------------------------------------------------------------
+
 # seven_feat
 
     -- 7fmodel_diff.py
     
     -- 7fmodel_same.py
 
+--------------------------------------------------------------------------------------------
+
+
+Run the following:
+
+1. features.py
 
 2. Select a Model and go into the directory
 
